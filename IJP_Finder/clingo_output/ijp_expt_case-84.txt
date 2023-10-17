@@ -1,0 +1,6 @@
+clingo version 5.6.2
+Reading from ...togen_asp_scripts/ijp_expt_cases-84.dl
+Solving...
+Answer: 1
+res(3) witness(3,2,3) witness(3,2,4) witness(5,2,1) witness(6,4,2) witness(6,4,3) witness(3,6,3) witness(3,6,4) witness(6,6,2) witness(6,6,3) number_of_witnesses(9)
+Optimization: 9

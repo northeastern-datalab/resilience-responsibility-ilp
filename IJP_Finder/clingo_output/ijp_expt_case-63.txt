@@ -1,0 +1,17 @@
+clingo version 5.6.2
+Reading from ...togen_asp_scripts/ijp_expt_cases-63.dl
+Solving...
+Answer: 1
+res(2) witness(3,4,1) witness(4,5,2) witness(5,4,2) witness(4,5,3) number_of_witnesses(4)
+Optimization: 4
+Answer: 2
+res(2) witness(3,4,1) witness(4,5,2) witness(4,5,3) number_of_witnesses(3)
+Optimization: 3
+OPTIMUM FOUND
+
+Models       : 2
+  Optimum    : yes
+Optimization : 3
+Calls        : 1
+Time         : 1964.445s (Solving: 1962.85s 1st Model: 1952.53s Unsat: 10.31s)
+CPU Time     : 1963.585s

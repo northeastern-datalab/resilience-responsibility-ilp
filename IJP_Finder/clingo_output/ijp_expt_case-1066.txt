@@ -1,0 +1,29 @@
+clingo version 5.6.2
+Reading from ...gen_asp_scripts/ijp_expt_cases-1066.dl
+Solving...
+Answer: 1
+res(4) witness(1,5,8) witness(2,5,3) witness(3,3,5) witness(3,6,6) witness(3,3,7) witness(7,5,3) witness(7,3,7) witness(7,5,8) witness(8,3,5) number_of_witnesses(9)
+Optimization: 9
+Answer: 2
+res(4) witness(1,5,8) witness(2,5,3) witness(3,3,5) witness(3,3,7) witness(7,5,3) witness(7,7,6) witness(7,5,8) witness(8,3,5) number_of_witnesses(8)
+Optimization: 8
+Answer: 3
+res(5) witness(1,1,4) witness(2,6,3) witness(4,6,3) witness(4,4,8) witness(5,5,6) witness(7,7,5) witness(8,1,4) number_of_witnesses(7)
+Optimization: 7
+Answer: 4
+res(4) witness(1,6,5) witness(2,6,6) witness(3,3,7) witness(4,6,8) witness(5,6,6) number_of_witnesses(5)
+Optimization: 5
+Answer: 5
+res(3) witness(1,6,3) witness(2,6,6) witness(3,6,6) witness(4,6,8) number_of_witnesses(4)
+Optimization: 4
+Answer: 6
+res(2) witness(1,4,7) witness(2,4,6) witness(7,6,4) number_of_witnesses(3)
+Optimization: 3
+OPTIMUM FOUND
+
+Models       : 6
+  Optimum    : yes
+Optimization : 3
+Calls        : 1
+Time         : 12230.469s (Solving: 11991.29s 1st Model: 2911.76s Unsat: 408.85s)
+CPU Time     : 12221.281s

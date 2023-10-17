@@ -1,0 +1,154 @@
+r(1,1,1).
+r(2,1,2).
+r(3,1,3).
+r(4,2,1).
+r(5,2,2).
+r(6,2,3).
+r(7,3,1).
+r(8,3,2).
+r(9,3,3).
+c(1,1).
+c(2,2).
+c(3,3).
+a(1,1).
+a(2,2).
+a(3,3).
+indb(r, Tid, 1) | indb(r, Tid, 0) :- r(Tid, _, _).
+indb(c, Tid, 1) | indb(c, Tid, 0) :- c(Tid, _).
+indb(a, Tid, 1) | indb(a, Tid, 0) :- a(Tid, _).
+witness(W, X, Y, Z, T1, T2, T3, T4, T5) :- a(T1, X), r(T2, X, Y), r(T3, Z, Y), r(T4, Z, W), c(T5, W), indb(a, T1, 1), indb(r, T2, 1), indb(r, T3, 1), indb(r, T4, 1), indb(c, T5, 1).
+number_of_witnesses(K) :- #count{ W, X, Y, Z, T1, T2, T3, T4, T5 : witness(W, X, Y, Z, T1, T2, T3, T4, T5) } = K.
+
+valid_res2(a, 1, 1).
+invalid_res2(a, 1, 1).
+valid_res3(a, 2, 1).
+invalid_res3(a, 2, 1).
+valid_res4(a, 1, 1).
+invalid_res4(a, 1, 1).
+valid_res4(a, 2, 1).
+invalid_res4(a, 2, 1).
+
+invalid_res1(r, Tid, 1) | invalid_res1(r, Tid, 0) :- r(Tid, _, _).
+invalid_res1(c, Tid, 1) | invalid_res1(c, Tid, 0) :- c(Tid, _).
+invalid_res1(a, Tid, 1) | invalid_res1(a, Tid, 0) :- a(Tid, _).
+
+invalid_res2(r, Tid, 1) | invalid_res2(r, Tid, 0) :- r(Tid, _, _).
+invalid_res2(c, Tid, 1) | invalid_res2(c, Tid, 0) :- c(Tid, _).
+invalid_res2(a, Tid, 1) | invalid_res2(a, Tid, 0) :- a(Tid, _).
+
+invalid_res3(r, Tid, 1) | invalid_res3(r, Tid, 0) :- r(Tid, _, _).
+invalid_res3(c, Tid, 1) | invalid_res3(c, Tid, 0) :- c(Tid, _).
+invalid_res3(a, Tid, 1) | invalid_res3(a, Tid, 0) :- a(Tid, _).
+
+invalid_res4(r, Tid, 1) | invalid_res4(r, Tid, 0) :- r(Tid, _, _).
+invalid_res4(c, Tid, 1) | invalid_res4(c, Tid, 0) :- c(Tid, _).
+invalid_res4(a, Tid, 1) | invalid_res4(a, Tid, 0) :- a(Tid, _).
+
+valid_res1(r, Tid, 1) | valid_res1(r, Tid, 0) :- r(Tid, _, _).
+valid_res1(c, Tid, 1) | valid_res1(c, Tid, 0) :- c(Tid, _).
+valid_res1(a, Tid, 1) | valid_res1(a, Tid, 0) :- a(Tid, _).
+
+valid_res2(r, Tid, 1) | valid_res2(r, Tid, 0) :- r(Tid, _, _).
+valid_res2(c, Tid, 1) | valid_res2(c, Tid, 0) :- c(Tid, _).
+valid_res2(a, Tid, 1) | valid_res2(a, Tid, 0) :- a(Tid, _).
+
+valid_res3(r, Tid, 1) | valid_res3(r, Tid, 0) :- r(Tid, _, _).
+valid_res3(c, Tid, 1) | valid_res3(c, Tid, 0) :- c(Tid, _).
+valid_res3(a, Tid, 1) | valid_res3(a, Tid, 0) :- a(Tid, _).
+
+valid_res4(r, Tid, 1) | valid_res4(r, Tid, 0) :- r(Tid, _, _).
+valid_res4(c, Tid, 1) | valid_res4(c, Tid, 0) :- c(Tid, _).
+valid_res4(a, Tid, 1) | valid_res4(a, Tid, 0) :- a(Tid, _).
+
+
+invalid_resilience1 :- witness(W, X, Y, Z, T1, T2, T3, T4, T5), invalid_res1(a, T1, 0), invalid_res1(r, T2, 0), invalid_res1(r, T3, 0), invalid_res1(r, T4, 0), invalid_res1(c, T5, 0).
+invalid_resilience1 :- #count{Table, Tid: invalid_res1(Table, Tid, 1)} >= K, res(K).
+invalid_resilience2 :- witness(W, X, Y, Z, T1, T2, T3, T4, T5), invalid_res2(a, T1, 0), invalid_res2(r, T2, 0), invalid_res2(r, T3, 0), invalid_res2(r, T4, 0), invalid_res2(c, T5, 0).
+invalid_resilience2 :- #count{Table, Tid: invalid_res2(Table, Tid, 1)} >= K, res(K).
+invalid_resilience3 :- witness(W, X, Y, Z, T1, T2, T3, T4, T5), invalid_res3(a, T1, 0), invalid_res3(r, T2, 0), invalid_res3(r, T3, 0), invalid_res3(r, T4, 0), invalid_res3(c, T5, 0).
+invalid_resilience3 :- #count{Table, Tid: invalid_res3(Table, Tid, 1)} >= K, res(K).
+invalid_resilience4 :- witness(W, X, Y, Z, T1, T2, T3, T4, T5), invalid_res4(a, T1, 0), invalid_res4(r, T2, 0), invalid_res4(r, T3, 0), invalid_res4(r, T4, 0), invalid_res4(c, T5, 0).
+invalid_resilience4 :- #count{Table, Tid: invalid_res4(Table, Tid, 1)} >= K+1, res(K).
+
+:- witness(W, X, Y, Z, T1, T2, T3, T4, T5), valid_res1(a, T1, 0), valid_res1(r, T2, 0), valid_res1(r, T3, 0), valid_res1(r, T4, 0), valid_res1(c, T5, 0).
+res(K) :- #count{Table, Tid: valid_res1(Table, Tid, 1)} = K.
+:- witness(W, X, Y, Z, T1, T2, T3, T4, T5), valid_res2(a, T1, 0), valid_res2(r, T2, 0), valid_res2(r, T3, 0), valid_res2(r, T4, 0), valid_res2(c, T5, 0).
+:- not #count{Table, Tid: valid_res2(Table, Tid, 1)} = K, res(K).
+:- witness(W, X, Y, Z, T1, T2, T3, T4, T5), valid_res3(a, T1, 0), valid_res3(r, T2, 0), valid_res3(r, T3, 0), valid_res3(r, T4, 0), valid_res3(c, T5, 0).
+:- not #count{Table, Tid: valid_res3(Table, Tid, 1)} = K, res(K).
+:- witness(W, X, Y, Z, T1, T2, T3, T4, T5), valid_res4(a, T1, 0), valid_res4(r, T2, 0), valid_res4(r, T3, 0), valid_res4(r, T4, 0), valid_res4(c, T5, 0).
+:- not #count{Table, Tid: valid_res4(Table, Tid, 1)} = K+1, res(K).
+
+invalid_res1(r, Tid, 0) :- invalid_resilience1, r(Tid, _, _).
+invalid_res1(r, Tid, 1) :- invalid_resilience1, r(Tid, _, _).
+invalid_res1(c, Tid, 0) :- invalid_resilience1, c(Tid, _).
+invalid_res1(c, Tid, 1) :- invalid_resilience1, c(Tid, _).
+invalid_res1(a, Tid, 0) :- invalid_resilience1, a(Tid, _).
+invalid_res1(a, Tid, 1) :- invalid_resilience1, a(Tid, _).
+
+invalid_res2(r, Tid, 0) :- invalid_resilience2, r(Tid, _, _).
+invalid_res2(r, Tid, 1) :- invalid_resilience2, r(Tid, _, _).
+invalid_res2(c, Tid, 0) :- invalid_resilience2, c(Tid, _).
+invalid_res2(c, Tid, 1) :- invalid_resilience2, c(Tid, _).
+invalid_res2(a, Tid, 0) :- invalid_resilience2, a(Tid, _).
+invalid_res2(a, Tid, 1) :- invalid_resilience2, a(Tid, _).
+
+invalid_res3(r, Tid, 0) :- invalid_resilience3, r(Tid, _, _).
+invalid_res3(r, Tid, 1) :- invalid_resilience3, r(Tid, _, _).
+invalid_res3(c, Tid, 0) :- invalid_resilience3, c(Tid, _).
+invalid_res3(c, Tid, 1) :- invalid_resilience3, c(Tid, _).
+invalid_res3(a, Tid, 0) :- invalid_resilience3, a(Tid, _).
+invalid_res3(a, Tid, 1) :- invalid_resilience3, a(Tid, _).
+
+invalid_res4(r, Tid, 0) :- invalid_resilience4, r(Tid, _, _).
+invalid_res4(r, Tid, 1) :- invalid_resilience4, r(Tid, _, _).
+invalid_res4(c, Tid, 0) :- invalid_resilience4, c(Tid, _).
+invalid_res4(c, Tid, 1) :- invalid_resilience4, c(Tid, _).
+invalid_res4(a, Tid, 0) :- invalid_resilience4, a(Tid, _).
+invalid_res4(a, Tid, 1) :- invalid_resilience4, a(Tid, _).
+
+:- not invalid_resilience1.
+:- not invalid_resilience2.
+:- not invalid_resilience3.
+:- not invalid_resilience4.
+range_triangle(1..3).range_domain(1..3).
+endpoint1_constant(1).
+endpoint2_constant(2).
+:- witness(W, X, Y, Z, T1, T2, T3, T4, T5), endpoint1_constant(W), endpoint1_constant(X), endpoint1_constant(Y), endpoint1_constant(Z).
+:- witness(W, X, Y, Z, T1, T2, T3, T4, T5), endpoint2_constant(W), endpoint2_constant(X), endpoint2_constant(Y), endpoint2_constant(Z).
+
+isomorph_map(C, 1, C) :-  endpoint1_constant(C), range_triangle(I). % endpoint1 gets mapped to itself for edge 1
+isomorph_map(C, 2, X) :-  endpoint1_constant(C), range_triangle(I), X = C + 1. %endpoint1 gets mapped to 2 for edge 2 - add endpoint arity
+isomorph_map(C, 3, C) :-  endpoint1_constant(C), range_triangle(I). %endpoint1 gets mapped to itself for edge 3
+isomorph_map(C, 1, C) :-  endpoint2_constant(C), range_triangle(I). %endpoint2 gets mapped to itself for edge 1
+isomorph_map(C, 2, X) :-  endpoint2_constant(C), range_triangle(I), X = C + 1. %endpoint2 gets mapped to 3 for edge 2
+isomorph_map(C, 3, X) :-  endpoint2_constant(C), range_triangle(I), X = C + 1. %endpoint2 gets mapped to 3 for edge 3
+isomorph_map(C, I, X) :- range_triangle(I), range_domain(C), X = C+(3+1)*I, not endpoint1_constant(C), not endpoint2_constant(C).
+
+ijp_isomorph_1_r(TID, VI0,VI1) :- indb(r, TID, 1), r(TID, V0,V1), isomorph_map(V0,1,VI0), isomorph_map(V1,1,VI1).
+ijp_isomorph_1_c(TID, VI0) :- indb(c, TID, 1), c(TID, V0), isomorph_map(V0,1,VI0).
+ijp_isomorph_1_a(TID, VI0) :- indb(a, TID, 1), a(TID, V0), isomorph_map(V0,1,VI0).
+ijp_isomorph_2_r(TID, VI0,VI1) :- indb(r, TID, 1), r(TID, V0,V1), isomorph_map(V0,2,VI0), isomorph_map(V1,2,VI1).
+ijp_isomorph_2_c(TID, VI0) :- indb(c, TID, 1), c(TID, V0), isomorph_map(V0,2,VI0).
+ijp_isomorph_2_a(TID, VI0) :- indb(a, TID, 1), a(TID, V0), isomorph_map(V0,2,VI0).
+ijp_isomorph_3_r(TID, VI0,VI1) :- indb(r, TID, 1), r(TID, V0,V1), isomorph_map(V0,3,VI0), isomorph_map(V1,3,VI1).
+ijp_isomorph_3_c(TID, VI0) :- indb(c, TID, 1), c(TID, V0), isomorph_map(V0,3,VI0).
+ijp_isomorph_3_a(TID, VI0) :- indb(a, TID, 1), a(TID, V0), isomorph_map(V0,3,VI0).
+
+ijp_isomorph_triangle_r(TID, V0, V1) :- ijp_isomorph_1_r(TID, V0, V1).
+ijp_isomorph_triangle_c(TID, V0) :- ijp_isomorph_1_c(TID, V0).
+ijp_isomorph_triangle_a(TID, V0) :- ijp_isomorph_1_a(TID, V0).
+ijp_isomorph_triangle_r(TID, V0, V1) :- ijp_isomorph_2_r(TID, V0, V1).
+ijp_isomorph_triangle_c(TID, V0) :- ijp_isomorph_2_c(TID, V0).
+ijp_isomorph_triangle_a(TID, V0) :- ijp_isomorph_2_a(TID, V0).
+ijp_isomorph_triangle_r(TID, V0, V1) :- ijp_isomorph_3_r(TID, V0, V1).
+ijp_isomorph_triangle_c(TID, V0) :- ijp_isomorph_3_c(TID, V0).
+ijp_isomorph_triangle_a(TID, V0) :- ijp_isomorph_3_a(TID, V0).
+ijp_triangle_witness(W, X, Y, Z) :- ijp_isomorph_triangle_a(T1, X), ijp_isomorph_triangle_r(T2, X, Y), ijp_isomorph_triangle_r(T3, Z, Y), ijp_isomorph_triangle_r(T4, Z, W), ijp_isomorph_triangle_c(T5, W).
+:- number_of_witnesses(K), not  #count{ W, X, Y, Z : ijp_triangle_witness(W, X, Y, Z) }= 3*K.
+:~ witness(W, X, Y, Z, T1, T2, T3, T4, T5). [1@1, W, X, Y, Z]
+
+#show.
+#show number_of_witnesses(K) : number_of_witnesses(K).
+#show witness(W, X, Y, Z) : witness(W, X, Y, Z, T1, T2, T3, T4, T5).
+#show res(K) : res(K).

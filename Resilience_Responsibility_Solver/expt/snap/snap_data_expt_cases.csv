@@ -1,0 +1,3 @@
+case_no,query_name,sample_log_base,sample_log_start,sample_log_end,sample_points,bag_semantics
+1,5Chain,10,1,2,20,False
+2,5Cycle,10,1,2,20,False

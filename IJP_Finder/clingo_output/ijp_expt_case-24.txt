@@ -1,0 +1,12 @@
+clingo version 5.6.2
+Reading from ...togen_asp_scripts/ijp_expt_cases-24.dl
+Solving...
+Answer: 1
+res(2) witness(5,1,2,2) witness(6,3,5,4) witness(6,2,5,5) number_of_witnesses(3)
+SATISFIABLE
+
+Models       : 1+
+Calls        : 1
+Time         : 6203.208s (Solving: 6165.86s 1st Model: 6164.65s Unsat: 0.00s)
+CPU Time     : 191409.026s
+Threads      : 64       (Winner: 12)

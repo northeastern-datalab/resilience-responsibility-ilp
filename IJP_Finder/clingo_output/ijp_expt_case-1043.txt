@@ -1,0 +1,13 @@
+clingo version 5.6.2
+Reading from ...gen_asp_scripts/ijp_expt_cases-1043.dl
+Solving...
+Progression : [1;inf]
+Progression : [2;inf]
+UNSATISFIABLE
+
+Models       : 0
+Bounds       : [2;*]
+Calls        : 1
+Time         : 272.783s (Solving: 270.55s 1st Model: 0.00s Unsat: 270.55s)
+CPU Time     : 8436.094s
+Threads      : 32       (Winner: 22)

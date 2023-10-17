@@ -1,0 +1,9 @@
+clingo version 5.6.2
+Reading from ...togen_asp_scripts/ijp_expt_cases-41.dl
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 0.306s (Solving: 0.17s 1st Model: 0.00s Unsat: 0.17s)
+CPU Time     : 0.306s
