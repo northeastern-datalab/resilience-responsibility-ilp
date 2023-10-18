@@ -1,7 +1,7 @@
 # Resilience and Responsibility Code
 
 [![Project Page](https://img.shields.io/badge/Project%20Page-blue.svg)](https://northeastern-datalab.github.io/unified-reverse-data-management/)
-[![Sigmod Paper](https://img.shields.io/badge/Paper-SIGMOD24-blue.svg)](https://arxiv.org/abs/2212.08898)
+[![Sigmod Paper](https://img.shields.io/badge/Paper-SIGMOD24-blue.svg)](https://doi.org/10.1145/3626715)
 [![Arxiv Paper](https://img.shields.io/badge/Paper-arXiv-blue.svg)](https://arxiv.org/abs/2212.08898)
 [![License](https://img.shields.io/badge/License-Apache%202.0-orange.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -12,9 +12,9 @@ This repository contains code to solve Resilience and Causal Responsibility via 
 **Causal Responsibility**: What is a minimum subset of tuples to remove from a database to make a given input tuple ``counterfactual''?
 
 The repository is divided into two parts:
--  ``IJP_Finder``: The code in this folder can be used to check the hardness of solving resilience and causal responsibility for a given query by automatically searching for hardness gadgets or IJPs.
+-  ``IJP_Finder``: The code in this folder can be used to check the hardness of solving resilience and causal responsibility for a given query by automatically searching for hardness gadgets or Independent Join Paths (IJPs).
 
-- ``Resilience_Responsibility_Solver``: The code translates the problem into Integer Linear Programs (ILPs) and then solves them with existing solvers (e.g. Gurobi).
+- ``Resilience_Responsibility_Solver``: The code translates the problem of determining resilience (or responsibility) for a given query and database (and tuple) into Integer Linear Programs (ILPs) and then solves them with existing solvers (e.g. Gurobi).
 
 Details and instructions for running the code in both parts are in the READMEs of the respective folders.
 
@@ -31,7 +31,8 @@ If you use this code in your work, please cite:
   booktitle = {International Conference on Management of Data (SIGMOD)},
   publisher = {{ACM}},
   year      = {2024},
-  url       = {https://doi.org/10.1145/3626715},
+  doi       = {https://doi.org/10.1145/3626715},
+  url       = {https://arxiv.org/abs/2212.08898}
 }
 ```
 

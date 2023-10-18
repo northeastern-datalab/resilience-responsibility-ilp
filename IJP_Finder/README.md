@@ -3,6 +3,8 @@
 This repository contains the code to generate DLP[RESIJP] for an arbitrary query and domain and run the generated DLP [Clingo](https://potassco.org/clingo/).
 We also include all our programs and output.
 
+The principles behind DLP[RESIJP] are described in Section 7.2 of our [SIGMOD Paper](https://doi.org/10.1145/3626715).
+
 # Description
  
 The core components of this repository are:
