@@ -1,0 +1,3 @@
+env/
+__pycache__
+data/data_instances_pickle_dump/*

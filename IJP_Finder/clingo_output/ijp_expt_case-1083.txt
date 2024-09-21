@@ -1,9 +1,0 @@
-clingo version 5.6.2
-Reading from ...gen_asp_scripts/ijp_expt_cases-1083.dl
-Solving...
-UNSATISFIABLE
-
-Models       : 0
-Calls        : 1
-Time         : 23057.540s (Solving: 23056.78s 1st Model: 0.00s Unsat: 23056.78s)
-CPU Time     : 23034.008s
