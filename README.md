@@ -25,7 +25,7 @@ The repository contains a description for reproducing the experimental results r
 1. Install Prerequisites
     1. Download the [Gurobi optimizer](https://www.gurobi.com/downloads/). **A free Gurobi academic license is required to run the code**. Request an Academic Named-User License and follow instructions to install gurobi on your computer.
     2. Install the Answer Set Programming Solver [Clingo](https://potassco.org/clingo/) following instructions at https://potassco.org/clingo/
-        * We use clingo version 5.7.1
+        * We use clingo version 5.6.0
         * Use conda for Linux/ Windows and brew for MAC OS
     3. (Optional, highly recommended) Set up a [virtual environment](https://docs.python.org/3/library/venv.html).
     4. Install the requirements in ``requirements.txt``
