@@ -21,7 +21,7 @@
     ```
         bash SIGMOD_Reproducibility/Fig-5,6,7/tpch-data-gen.sh 
     ```
-    3. You should see 12 folders in [data/tpch/data](data/tpch/data), corresponding to data generated for 12 scale factors.
+    3. You should see 13 folders in [data/tpch/data](data/tpch/data), corresponding to data generated for 13 scale factors.
 
 3. Run the experiments
     ```

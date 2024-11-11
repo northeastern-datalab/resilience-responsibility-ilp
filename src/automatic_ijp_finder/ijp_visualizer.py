@@ -26,8 +26,13 @@ def process_clingo_output(clingo_file):
     with open(clingo_file, 'r') as file:
         content = file.read()
 
-    # Use regex to find all words that start with 'witness'
-    witness_words = re.findall(r'\bwitness\(\d+,\d+,\d+\)', content)
+    # Use regex to find all words that start with 'witness' in last most optimal answer
+    pattern = r'\bwitness\(\d+(?:,\d+)*\)'
+    lines = content.splitlines()
+    for line in reversed(lines):
+        witness_words = re.findall(pattern, line)
+        if witness_words:
+            break 
 
     return ' '.join(witness_words)
 
@@ -52,6 +57,7 @@ def build_hypergraph(queryname, witneses_string):
 
     # Convert the edges into the hypergraph
     witness_hypergraph = {i: tuple(witness_edges[i]) for i in range(len(witness_edges))}
+    print(witness_hypergraph)
     H = hnx.Hypergraph(witness_hypergraph)
 
     return H
