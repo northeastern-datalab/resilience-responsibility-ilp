@@ -25,6 +25,7 @@
 
 3. Run the experiments
     ```
+        bash SIGMOD_Reproducibility/Fig-5,6,7/run_experiments.sh 
     ```
 
 4. Visualize the output: We have a Jupyter notebook [sigmod_expts.ipynb](sigmod_expts.ipynb) code to read the experimental output and generate the plots by calling methods from [../../src/resilience_responsibility_solver/plot/](../../src/resilience_responsibility_solver/plot/).
