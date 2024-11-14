@@ -227,7 +227,7 @@ def responsibility_with_flow(query, database_instance, responsibility_tuples, tu
         pruned_witnesses = witnesses.copy()
         for i in range(len(z)):
             pruned_witnesses = pruned_witnesses.loc[ pruned_witnesses[ z[i][0] ].apply(str) == str(z[i][1]) ]
-        witnesses_to_be_preserved = witnesses_to_be_preserved.append(pruned_witnesses, ignore_index = True)
+        witnesses_to_be_preserved = witnesses_to_be_preserved._append(pruned_witnesses, ignore_index = True)
 
     if len(witnesses_to_be_preserved) == len(witnesses):
         result['Responsibility'] = 0

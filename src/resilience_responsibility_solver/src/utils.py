@@ -199,11 +199,6 @@ def constant_tuple_linearization_of_query(query):
     There are as many linearizations as permutations of the query.
     """
     
-    
-    
-    
-    
-    
     query_name = ""
     for qn, q in queries.items():
         if q == query:
@@ -246,7 +241,7 @@ def constant_witness_linearization_of_query(query, database_instance, responsibi
         
         modified_responsibility_tuples = []
         for r in responsibility_tuples:
-            modified_responsibility_tuples += get_mapped_new_tuples_after_dissociation(query, mlq, modified_database_instance)
+            modified_responsibility_tuples += get_mapped_new_tuples_after_dissociation(query, r, mlq, modified_database_instance)
 
 
         
@@ -299,6 +294,10 @@ def get_mapped_new_tuples_after_dissociation(query, original_tuple, lq, modified
     
     return new_tuple_keys
 
+def nx_minimum_cut_with_timeout_inner(graph, results_dict):
+    results_dict['cut_value'] = nx.minimum_cut(graph, 'source', 'target')
+
+
 def nx_minimum_cut_with_timeout(graph, time_limit):
     """
     Executes the networkx minimum cut with a specified timeout 
@@ -309,8 +308,6 @@ def nx_minimum_cut_with_timeout(graph, time_limit):
         time_limit (seconds): time limit in seconds
     """
 
-    def nx_minimum_cut_with_timeout_inner(graph, results_dict):
-        results_dict['cut_value'] = nx.minimum_cut(graph, 'source', 'target')
 
     results_dict = dict()
     p = multiprocessing.Process(target=nx_minimum_cut_with_timeout_inner, args=(graph, results_dict))
