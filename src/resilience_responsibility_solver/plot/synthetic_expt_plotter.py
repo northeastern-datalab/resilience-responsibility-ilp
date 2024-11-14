@@ -385,13 +385,14 @@ def plot_resilience_expt_with_deltas(case_no, EXPT_DATA_FILE = 'data/synthetic_e
         median_ymin = expt_data_bin[expt1+': Solve Time'].iloc[g00_arrow_point]
         median_ymax = expt_data_bin[expt2+': Solve Time'].iloc[g00_arrow_point]
         median_ymid = math.sqrt(median_ymax*median_ymin)
-        axes[0][0].annotate("", xy=(median_x, median_ymin), 
-                        xytext=(median_x, median_ymax), 
-                        arrowprops=dict(arrowstyle="<->"))
-        axes[0][0].annotate(str(round(median_ymax / median_ymin))+'x', 
-                        xy=(median_x, median_ymin), 
-                        xytext=(median_x*1.1, median_ymid), 
-                        )
+        if not np.isnan(median_x) and not np.isnan(median_ymax) and not np.isnan(median_ymin):
+            axes[0][0].annotate("", xy=(median_x, median_ymin), 
+                            xytext=(median_x, median_ymax), 
+                            arrowprops=dict(arrowstyle="<->"))
+            axes[0][0].annotate(str(round(median_ymax / median_ymin))+'x', 
+                            xy=(median_x, median_ymin), 
+                            xytext=(median_x*1.1, median_ymid), 
+                            )
     
     if g11_arrow_points is not None:
         for (arrow_point, expt1, expt2) in g11_arrow_points:
@@ -399,13 +400,14 @@ def plot_resilience_expt_with_deltas(case_no, EXPT_DATA_FILE = 'data/synthetic_e
             median_ymin = expt_data_bin[expt1+': '+expt_type+': Delta'].iloc[arrow_point]
             median_ymax = expt_data_bin[expt2+': '+expt_type+': Delta'].iloc[arrow_point]
             median_ymid = math.sqrt(median_ymax*median_ymin)
-            axes[1][1].annotate("", xy=(median_x, median_ymin), 
-                            xytext=(median_x, median_ymax), 
-                            arrowprops=dict(arrowstyle="<->"))
-            axes[1][1].annotate(str(round(median_ymax / median_ymin,1))+'x', 
-                            xy=(median_x, median_ymin), 
-                            xytext=(median_x*1.1, median_ymid), 
-                            )
+            if not np.isnan(median_x) and not np.isnan(median_ymax) and not np.isnan(median_ymin):
+                axes[1][1].annotate("", xy=(median_x, median_ymin), 
+                                xytext=(median_x, median_ymax), 
+                                arrowprops=dict(arrowstyle="<->"))
+                axes[1][1].annotate(str(round(median_ymax / median_ymin,1))+'x', 
+                                xy=(median_x, median_ymin), 
+                                xytext=(median_x*1.1, median_ymid), 
+                                )
 
     fig.tight_layout()
     if PLOT_OUTPUT_FILE == None:
