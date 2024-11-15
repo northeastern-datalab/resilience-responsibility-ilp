@@ -28,6 +28,12 @@
         bash SIGMOD_Reproducibility/Fig-5,6,7/run_experiments.sh 
     ```
 
+3(b). Optionally just run the experiments for Fig 5 and 7 for smaller sizes (takes <3 hours to terminate)
+    ```
+        bash SIGMOD_Reproducibility/Fig-5,6,7/run_experiments_small.sh 
+    ```
+
 4. Visualize the output: We have a Jupyter notebook [sigmod_expts.ipynb](sigmod_expts.ipynb) code to read the experimental output and generate the plots by calling methods from [../../src/resilience_responsibility_solver/plot/](../../src/resilience_responsibility_solver/plot/).
 
-The default notebook uses the reference experimental data to start with, but this can be toggled by setting ``use_reference_data = False``
+The default notebook uses the reference experimental data to start with, but this can be toggled by setting ``use_reference_data = False``.
+To use the data generated in smaller sized experiments set ``use_small_expt = True``.

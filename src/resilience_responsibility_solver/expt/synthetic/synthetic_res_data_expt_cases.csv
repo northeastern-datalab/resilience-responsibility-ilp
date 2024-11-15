@@ -2,6 +2,9 @@ case_no,query_name,domain_size,itr_log_base,itr_log_start,itr_log_end,num_itr,ba
 1,3Star,500,10,0.5,6,500,False,0,True
 2,SJ-chain,100,10,0.5,4.5,100,True,100,True
 3,SJ-conf,100,10,0.5,4.5,100,True,100,False
+4,3Star,100,10,0.5,4,100,False,0,True
+5,SJ-chain,50,10,0.5,3,50,True,100,True
+6,SJ-conf,50,10,0.5,3,50,True,100,False
 32,Triangle,100,10,0.5,4.5,100,False,0,True
 33,TriangleUnary,100,10,0.5,4.5,100,False,0,False
 34,2Chain,100,10,0.5,4.5,100,False,0,False
