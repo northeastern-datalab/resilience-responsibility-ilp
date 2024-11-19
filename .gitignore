@@ -1,3 +1,4 @@
 env/
 __pycache__
 data/data_instances_pickle_dump/*
+!data/data_instances_pickle_dump/__init__
