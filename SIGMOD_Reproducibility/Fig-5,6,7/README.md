@@ -43,5 +43,10 @@
 
 5. Visualize the output: We have a Jupyter notebook [sigmod_expts.ipynb](sigmod_expts.ipynb) code to read the experimental output and generate the plots by calling methods from [../../src/resilience_responsibility_solver/plot/](../../src/resilience_responsibility_solver/plot/).
 
+6. (Optional) The code generates some intermeadiate files, like pickle files storing various data instances that are tested, log files, linear program files. To delete this, you can run
+    ```
+        bash SIGMOD_Reproducibility/Fig-5,6,7/clean_intermediate_data.sh 
+    ```
+
 The default notebook uses the reference experimental data to start with, but this can be toggled by setting ``use_reference_data = False``.
 To use the data generated in smaller sized experiments set ``use_small_expt = True``.
