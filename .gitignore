@@ -4,3 +4,4 @@ data/data_instances_pickle_dump/*
 data/tpch/*
 data/expt_output/*
 SIGMOD_Reproducibility/Fig-3/output/*
+!data/data_instances_pickle_dump/__init__

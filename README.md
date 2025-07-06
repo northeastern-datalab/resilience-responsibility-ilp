@@ -23,7 +23,7 @@ Details and instructions for running the code in both parts are in the READMEs o
 The repository contains a description for reproducing the experimental results reported in our research paper in [sigmod_expts.ipynb](Resilience_Responsibility_Solver/expt/expt_plots/sigmod_expts.ipynb)
 
 1. Install Prerequisites
-    1. Download the [Gurobi optimizer](https://www.gurobi.com/downloads/). **A free Gurobi academic license is required to run the code**. Request an Academic Named-User License and follow instructions to install gurobi on your computer.
+    1. Download the [Gurobi optimizer](https://www.gurobi.com/downloads/). **A free Gurobi academic license is required to run the code**. Request an Academic Named-User License and follow instructions to install gurobi on your computer. If using a container environment like Docker, use the [Academic Web License Service](https://support.gurobi.com/hc/en-us/articles/13210193318033-What-is-an-Academic-WLS-license) to generate a portable license that does not require a static IP address.
     2. Install the Answer Set Programming Solver [Clingo](https://potassco.org/clingo/) following instructions at https://potassco.org/clingo/
         * We use clingo version 5.6.0
         * Use conda for Linux/ Windows and brew for MAC OS
@@ -32,6 +32,7 @@ The repository contains a description for reproducing the experimental results r
     ```
     pip install -r requirements.txt
     ```
+    (Note the pandas requirement is pandas=2.2.3. The code uses some functions that are set to be deprecated in future pandas versions.)
 2. For Figure 3 - automatic hardness gadgets: we use clingo, an Answer Set Propramming Solver to help us prove computational complexity results automatically. 
 This part is highly compute intensive - the hardest subfigure to generate took 15 hours on a 64-core processor. However, the fastest example takes under a minute end-to-end. More details are in [SIGMOD_Reproducibility/Fig-3/README.md](SIGMOD_Reproducibility/Fig-3/README.md)
 
